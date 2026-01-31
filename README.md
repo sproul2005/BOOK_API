@@ -85,6 +85,16 @@ Base URL: `http://localhost:3000`
 - **Range & Sort**: `GET /books?from=1990-01-01&sort=-publishDate`
 - **Pagination**: `GET /books?page=2&limit=5`
 
+### 3. Delete a Book
+**DELETE** `/books/:id`
+
+**Response**:
+```json
+{
+  "message": "Book deleted successfully"
+}
+```
+
 ## 🧪 Testing
 
 1.  Ensure MongoDB is running.

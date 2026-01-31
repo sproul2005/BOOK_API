@@ -1,0 +1,156 @@
+{
+    "info": {
+        "_postman_id": "c9f7a4b8-1234-4567-8901-abcdef123456",
+        "name": "Books API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Get Books (All)",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:3000/books",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "books"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Create Book",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"name\": \"Test Book\",\n    \"description\": \"This is a test book description.\",\n    \"author\": \"Test Author\",\n    \"publishDate\": \"2023-01-01\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:3000/books",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "books"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Search 'Potter'",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:3000/books?search=potter",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "books"
+                    ],
+                    "query": [
+                        {
+                            "key": "search",
+                            "value": "potter"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Filter by Author",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:3000/books?author=J.K. Rowling",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "books"
+                    ],
+                    "query": [
+                        {
+                            "key": "author",
+                            "value": "J.K. Rowling"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Date Range & Sort",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:3000/books?from=1990-01-01&sort=-publishDate",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "books"
+                    ],
+                    "query": [
+                        {
+                            "key": "from",
+                            "value": "1990-01-01"
+                        },
+                        {
+                            "key": "sort",
+                            "value": "-publishDate"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Delete Book",
+            "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:3000/books/REPLACE_WITH_BOOK_ID",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "books",
+                        "REPLACE_WITH_BOOK_ID"
+                    ]
+                }
+            },
+            "response": []
+        }
+    ]
+}

@@ -13,10 +13,14 @@ A production-ready Node.js REST API for managing a library of books. Built with 
 
 ## 🛠️ Tech Stack
 
-- **Runtime**: Node.js
-- **Framework**: Express.js
-- **Database**: MongoDB (Mongoose ODM)
-- **Architecture**: Layered (Controller -> Service -> Data Access)
+| Component | Technology | Description |
+| :--- | :--- | :--- |
+| **Runtime** | Node.js | Scalable network application runtime built on Chrome's V8 engine. |
+| **Framework** | Express.js | Minimal and flexible Node.js web application framework. |
+| **Database** | MongoDB | Document-oriented NoSQL database used for high volume data storage. |
+| **ORM** | Mongoose | Object Data Modeling (ODM) library for MongoDB. |
+| **Validation** | Joi | Powerful schema description language and data validator for JavaScript. |
+| **Logging** | Morgan | HTTP request logger middleware for Node.js. |
 
 ## 📦 Installation & Setup
 

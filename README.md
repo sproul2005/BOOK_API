@@ -108,14 +108,29 @@ Base URL: `http://localhost:3000`
 ## 📂 Project Structure
 
 ```
-src/
-├── config/         # Database configuration
-├── controllers/    # Request handlers (HTTP layer)
-├── models/         # Mongoose Schemas (Data layer)
-├── routes/         # Route definitions
-├── services/       # Business logic (Service layer)
-└── app.js          # App setup (Middleware)
-scripts/
-└── seed.js         # Data seeding script
-server.js           # Entry point
+├── scripts/
+│   └── seed.js                # Data seeding script(15+ books)
+|   
+├── src/
+│   ├── config/                # Database configuration
+│   │   └── db.js
+|   |
+│   ├── controllers/           # Request handlers(HTTP layer)
+│   │   └── book.controller.js
+│   |
+│   ├── models/                # Mongoose Schemas(Data layer)
+│   │   └── book.model.js
+|   |
+│   ├── routes/                # API Route Definitions
+│   │   └── book.routes.js
+|   |
+│   ├── services/              # Business logic (Service layer)
+│   │   └── book.service.js
+|   |
+│   └── app.js                 # App setup (Middleware)
+|
+├── .env                       # Environment Variables
+├── package.json               # Dependencies & Scripts
+├── README.md                  # Project Documentation  
+└── server.js                  # Entry point  
 ```

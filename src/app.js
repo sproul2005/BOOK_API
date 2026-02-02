@@ -1,13 +1,10 @@
 const express = require('express');
-const cors = require('cors');
-const morgan = require('morgan');
+const setupGlobalMiddleware = require('./middlewares/global.middleware');
 
 const app = express();
 
-// Middleware
-app.use(cors());
-app.use(express.json());
-app.use(morgan('dev'));
+// Setup Global Middleware
+setupGlobalMiddleware(app);
 
 // Routes
 const bookRoutes = require('./routes/book.routes');

@@ -118,6 +118,9 @@ Base URL: `http://localhost:3000`
 │   ├── controllers/           # Request handlers(HTTP layer)
 │   │   └── book.controller.js
 │   |
+│   ├── middlewares/           # Global middleware setup (CORS, Logger, Body Parser)
+│   │   └── global.middleware.js
+│   |
 │   ├── models/                # Mongoose Schemas(Data layer)
 │   │   └── book.model.js
 |   |
@@ -132,5 +135,5 @@ Base URL: `http://localhost:3000`
 ├── .env                       # Environment Variables
 ├── package.json               # Dependencies & Scripts
 ├── README.md                  # Project Documentation  
-└── server.js                  # Entry point  
+└── server.js                  # Entry point
 ```

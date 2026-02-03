@@ -1,30 +1,16 @@
 const Book = require('../models/book.model');
 
 class BookService {
-    /**
-     * Create a new book
-     * @param {Object} data 
-     * @returns {Promise<Book>}
-     */
+   
     async createBook(data) {
         const book = new Book(data);
         return await book.save();
     }
-
-    /**
-     * Delete a book by ID
-     * @param {string} id
-     * @returns {Promise<Book|null>}
-     */
+ 
     async deleteBook(id) {
         return await Book.findByIdAndDelete(id);
     }
 
-    /**
-     * Get books with filtering, search, sorting and pagination
-     * @param {Object} params - Query parameters 
-     * @returns {Promise<Object>} - { books, total, pages }
-     */
     async getBooks(params) {
         const {
             search,
@@ -49,7 +35,7 @@ class BookService {
         }
 
         // 2. Filter by Author (Case-insensitive exact match)
-        // Note: To do strictly "case-insensitive exact match", regex with ^$ is best 
+        // To do strictly "case-insensitive exact match", regex with ^$ is best 
         // since we stored it as plain string.
         if (author) {
             query.author = new RegExp(`^${author}$`, 'i');

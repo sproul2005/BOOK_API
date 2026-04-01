@@ -15,6 +15,43 @@ class BookController {
         }
     }
 
+    // GET /books/:id
+    async getById(req, res) {
+        try {
+            const book = await BookService.getBookById(req.params.id);
+            if (!book) {
+                return res.status(404).json({ error: 'Book not found' });
+            }
+            res.status(200).json(book);
+        } catch (error) {
+            console.error(error);
+            // Handling CastError for an invalid Mongoose ObjectId
+            if (error.kind === 'ObjectId') {
+                 return res.status(404).json({ error: 'Book not found' });
+            }
+            res.status(500).json({ error: 'Server Error' });
+        }
+    }
+
+    // PUT /books/:id
+    async update(req, res) {
+        try {
+            const book = await BookService.updateBook(req.params.id, req.body);
+            if (!book) {
+                return res.status(404).json({ error: 'Book not found' });
+            }
+            res.status(200).json(book);
+        } catch (error) {
+            if (error.name === 'ValidationError') {
+                return res.status(400).json({ error: error.message });
+            }
+            if (error.kind === 'ObjectId') {
+                 return res.status(404).json({ error: 'Book not found' });
+            }
+            res.status(500).json({ error: 'Server Error' });
+        }
+    }
+
     // DELETE /books/:id
     async delete(req, res) {
         try {

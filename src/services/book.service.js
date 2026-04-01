@@ -6,6 +6,14 @@ class BookService {
         const book = new Book(data);
         return await book.save();
     }
+
+    async getBookById(id) {
+        return await Book.findById(id);
+    }
+
+    async updateBook(id, updateData) {
+        return await Book.findByIdAndUpdate(id, updateData, { new: true, runValidators: true });
+    }
  
     async deleteBook(id) {
         return await Book.findByIdAndDelete(id);
